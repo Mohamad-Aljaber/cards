@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #232533;
+  text-transform: capitalize;
+  font-family: "Poppins", sans-serif;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform-style: preserve-3d;
+}
+.cards {
+  position: relative;
+  height: 200px;
+  width: 430px;
+  margin-bottom: 20px;
+  /* background-color: red; */
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.cards label {
+  position: absolute;
+  width: 430px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  cursor: pointer;
+  transition: transform-style 0.5s ease;
+  /* ???? */
+}
+.cards .card {
+  position: relative;
+  border-radius: 10px;
+  background-color: #323444;
+  height: 100%;
+  padding: 30px 35px;
+}
+.cards .image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards .image img {
+  height: 280px;
+  width: 75%;
+  border-radius: 5px;
+  transition: 0.6s;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  transform: scale(1.08);
+  filter: drop-shadow(10px 12px 5px rgb(0, 0, 0, 0.3));
+}
+.image img:hover {
+  transform: scale(1.13) translateY(-15px) rotate(25deg);
+}
+.cards .image .dots {
+  text-align: center;
+}
+.dots div {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+.dots div:nth-child(1) {
+  background-color: white;
+}
+.dots div:nth-child(2) {
+  background-color: #364e84;
+}
+.dots div:nth-child(3) {
+  background-color: black;
+}
+.dots div:nth-child(4) {
+  background-color: #d9bed1;
+}
+#slider1:checked ~ .cards #slide1,
+#slider2:checked ~ .cards #slide2,
+#slider3:checked ~ .cards #slide3,
+#slider4:checked ~ .cards #slide4 {
+  box-shadow: 0 15px 30px rgb(0, 0, 0, 35%);
+  transform: translate3d(-70%, 0, -220px);
+  --current-color: rgb(255, 255, 255, 0.5);
+  --current-color2: rgb(255, 255, 255, 0.5);
+}
+#slider1:checked ~ .cards #slide2,
+#slider2:checked ~ .cards #slide3,
+#slider3:checked ~ .cards #slide4,
+#slider4:checked ~ .cards #slide1 {
+  box-shadow: 0 15px 30px rgb(0, 0, 0, 35%);
+  transform: translate3d(-35%, 0, -110px);
+  --current-color: #e8aa42;
+  --current-color2: #e8aa42;
+}
+#slider1:checked ~ .cards #slide3,
+#slider2:checked ~ .cards #slide4,
+#slider3:checked ~ .cards #slide1,
+#slider4:checked ~ .cards #slide2 {
+  box-shadow: 0 15px 30px rgb(0, 0, 0, 35%);
+  transform: translate3d(0%, 0, 0px);
+  --current-color: #e57c23;
+  --current-color2: #eaeaea;
+}
+#slider1:checked ~ .cards #slide4,
+#slider2:checked ~ .cards #slide1,
+#slider3:checked ~ .cards #slide2,
+#slider4:checked ~ .cards #slide3 {
+  box-shadow: 0 15px 30px rgb(0, 0, 0, 35%);
+  transform: translate3d(35%, 0, -110px);
+  --current-color: #e8aa42;
+  --current-color2: #e8aa42;
+}
+.card .info {
+  display: flex;
+  text-align: end;
+  padding-top: 60px;
+  flex-direction: column;
+}
+.card .info span {
+  display: block;
+}
+.info span {
+  font-size: 28px;
+  color: var(--current-color2);
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  padding-left: 25%;
+  transition: 0.6s;
+}
+.info p {
+  font-size: 16px;
+  color: var(--current-color2);
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.info .btn-buy {
+  width: 100%;
+  height: 60px;
+  margin: 20px auto;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: var(--current-color);
+  background-color: var(--current-color2);
+  transition: 0.6s;
+}
+.info .btn-buy:hover {
+  background: #e57c23;
+  color: white;
+  transform: scale(1.03) translateY(-5px);
+}
+.icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20px;
+}
+.icons i {
+  font-size: 1.2rem;
+  color: var(--current-color);
+  transition: 0.6s;
+}
+.icons i:hover {
+  color: var(--current-color2);
+}
+input {
+  display: none;
+}
