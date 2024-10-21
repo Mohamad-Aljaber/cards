@@ -3,21 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  margin-top: 50px;
-  margin-bottom: 50px;
   background-color: #232533;
   text-transform: capitalize;
   font-family: "Poppins", sans-serif;
-  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  min-height: 30vh;
+  flex-direction: column;
 }
 main {
   width: 100%;
-  height: 100%;
+  height: 90%;
   max-width: 600px;
   max-height: 600px;
   margin-bottom: 200px;
@@ -35,6 +34,7 @@ main {
   /* background-color: red; */
   perspective: 1000px;
   transform-style: preserve-3d;
+  margin-top: 40px;
 }
 .cards label {
   position: absolute;
@@ -92,6 +92,7 @@ main {
 .dots div:nth-child(4) {
   background-color: #d9bed1;
 }
+
 #slider1:checked ~ .cards #slide1,
 #slider2:checked ~ .cards #slide2,
 #slider3:checked ~ .cards #slide3,
@@ -160,7 +161,7 @@ main {
   border-radius: 5px;
   color: var(--current-color);
   background-color: var(--current-color2);
-  transition: 0.6s;
+  transition: 0.3s;
 }
 .info .btn-buy:hover {
   background: #e57c23;
@@ -176,7 +177,7 @@ main {
 .icons i {
   font-size: 1.2rem;
   color: var(--current-color);
-  transition: 0.6s;
+  transition: 0.3s;
 }
 .icons i:hover {
   color: var(--current-color2);
